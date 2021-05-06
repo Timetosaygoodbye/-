@@ -1,0 +1,91 @@
+<!--main.wxml-->
+<view class="container-main">
+  <view wx:if="{{ifDialog1}}" catchtouchmove="preventTouchMove">
+    <view class="myMask"></view>
+    <view class="myDialog">
+      <text class="myDialogText">{{dialogTitle}}</text>
+      <image src="{{firstDialogImageURL}}" class="DialogImage"></image>
+      <button class="myDialogButton" type="primary" bindtap="nextDialog">{{nextButtonText}}</button>
+    </view>
+  </view>
+  <view wx:if="{{ifDialog2}}" catchtouchmove="preventTouchMove">
+    <view class="myMask"></view>
+    <view class="myDialog">
+      <text class="myDialogText">{{dialogTitle}}</text>
+      <image src="{{scrollDialogImageURL}}" class="DialogImage"></image>
+      <image src="{{scrollDialogBackgroundImageURL}}" class="DialogBackgroundImage"></image>
+      <view class="scrollBarContainer">
+        <view class="scrollBar" animation="{{animation}}">
+          <block wx:for="{{scrollBarList}}">
+            <view class="DialogBackgroundText"><text class="scrollText">{{item.number}}</text></view>
+          </block>
+        </view>
+      </view>
+      <block wx:if="{{ifAnimationEnd}}">
+        <button class="myDialogButton" type="primary" bindtap="close">{{moreButtonText}}</button>
+      </block>
+    </view>
+  </view>
+  <view class="myTabbar">
+    <image src="{{moneyIconURL}}" class="moneyIcon"></image>
+    <view class="tabbarLabel">
+      <text decode="true">{{tabBarText}}</text>
+      <image src="{{arrowIconURL}}" class="arrowIcon"></image>
+    </view>
+    <button class="img-button">
+      <image src="{{payIconURL}}" class="payIcon"></image>
+    </button>
+  </view>
+  <view class="title">
+    <image class="avatar" src="{{watsonsAvatarURL}}"></image>
+    <view class="nameArea">
+      <text class="chineseName">{{businessChineseName}}</text>
+      <text class="englishName">{{businessEnglishName}}</text>
+    </view>
+    <image class="HongKongImage" src="{{HongKongimageURL}}"></image>
+  </view>
+  <view class="body">
+    <view class="couponModule">
+      <view class="couponModuleTitle">
+        <view class="couponModuleTitlefront">
+          {{couponModule[0].front}}
+        </view>
+        <view class="couponModuleTitleback">
+          {{couponModule[0].back}}
+        </view>
+      </view>
+      <image class="couponImageSuper" src="{{superExchangeRateCouponURL}}"></image>
+      <image class="couponImageMoreReduction" src="{{moreReductionCouponURL}}"></image>
+      <image class="couponImageReceived" src="{{watsonsCouponURL}}"></image>
+      <image class="couponImageReceived" src="{{HongKongCouponURL}}"></image>
+    </view>
+    <view class="couponModule">
+      <view class="couponModuleTitle">
+        <view class="couponModuleTitlefront">
+          {{couponModule[1].front}}
+        </view>
+        <view class="couponModuleTitleback">
+          {{couponModule[1].back}}
+        </view>
+      </view>
+      <view class="smallCouponModule">
+        <image class="smallCouponImage" src="{{newItemCouponURL}}"></image>
+        <image class="smallCouponImage" src="{{giftCouponURL}}"></image>
+      </view>
+      <view class="smallCouponModule">
+        <image class="smallCouponImage" src="{{rebateCouponURL}}"></image>
+        <image class="smallCouponImage" src="{{singleItemCouponURL}}"></image>
+      </view>
+    </view>
+    <view class="moreStores">
+      <image class="moreStoreImage" src="{{moreStoresURL}}"></image>
+    </view>
+    <view class="myfooter">
+      <view class="weui-footer">
+        <view class="weui-footer__text">{{footer}}</view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

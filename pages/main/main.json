@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "境外游礼包",
+  "navigationBarBackgroundColor": "#de3525",
+  "navigationBarTextStyle":"white",
+  "usingComponents": {
+    "mp-tabbar": "weui-miniprogram/tabbar/tabbar"
+  }
+}

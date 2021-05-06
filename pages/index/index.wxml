@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="avatarinfo">
+    <view class="avatarinfo-avatar" bindtap="bindViewTap">
+    </view>
+  </view>
+  <view class="usermotto">
+    <text>{{motto}}</text>
+  </view>
+  <view class="userloading">
+    <mp-loading type="dot-gray"></mp-loading>
+  </view>
+</view>
